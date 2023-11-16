@@ -238,13 +238,13 @@ class FitModel:
         logger.write_txt_log('Stage 1 getting initial coeffs by Deep3D NN inference.')
         with torch.no_grad():
             self.pred_coeffs = self.net_recon_deep3d(input_data['img'].to(self.device))
-        self.infer_render(is_uv_tex=False)
-        vis_img = self.visualize(input_data, is_uv_tex=False)
-        vis_tex_uv = self.visualize_3dmmtex_as_uv()
-        logger.write_disk_images([vis_img], ['stage1_vis'])
-        logger.write_disk_images([vis_tex_uv], ['stage1_vis_3dmmtex_as_uv'])
-        self.save_mesh(path=logger.vis_dir, mesh_name='stage1_mesh.obj', is_uv_tex=False)
-        self.save_coeffs(path=logger.vis_dir, coeffs_name='stage1_coeffs.pt', is_uv_tex=False)
+        #self.infer_render(is_uv_tex=False)
+        #vis_img = self.visualize(input_data, is_uv_tex=False)
+        #vis_tex_uv = self.visualize_3dmmtex_as_uv()
+        #logger.write_disk_images([vis_img], ['stage1_vis'])
+        #logger.write_disk_images([vis_tex_uv], ['stage1_vis_3dmmtex_as_uv'])
+        #self.save_mesh(path=logger.vis_dir, mesh_name='stage1_mesh.obj', is_uv_tex=False)
+        #self.save_coeffs(path=logger.vis_dir, coeffs_name='stage1_coeffs.pt', is_uv_tex=False)
 
         #--------- Stage 2 - search UV tex on a spherical surface with fixed shape ---------
 
@@ -264,15 +264,15 @@ class FitModel:
         logger.reset_prefix()
         logger.write_txt_log('End stage 2 searching UV tex on a spherical surface with fixed shape.')
 
-        self.infer_render()
-        vis_img = self.visualize(input_data)
-        logger.write_disk_images([vis_img], ['stage2_vis'])
-        logger.write_disk_images([tensor2np(self.pred_uv_map[:1, :, :, :])], ['stage2_uv'])
-        self.save_mesh(path=logger.vis_dir,
-                       mesh_name='stage2_mesh.obj',
-                       mlt_name='stage2_mesh.mlt',
-                       uv_name='stage2_uv.png')
-        self.save_coeffs(path=logger.vis_dir, coeffs_name='stage2_coeffs.pt')
+        #self.infer_render()
+        #vis_img = self.visualize(input_data)
+        #logger.write_disk_images([vis_img], ['stage2_vis'])
+        #logger.write_disk_images([tensor2np(self.pred_uv_map[:1, :, :, :])], ['stage2_uv'])
+        #self.save_mesh(path=logger.vis_dir,
+        #               mesh_name='stage2_mesh.obj',
+        #               mlt_name='stage2_mesh.mlt',
+        #               uv_name='stage2_uv.png')
+        #self.save_coeffs(path=logger.vis_dir, coeffs_name='stage2_coeffs.pt')
 
         #--------- Stage 3 - jointly optimize UV tex and shape ---------
 
