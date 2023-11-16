@@ -44,7 +44,7 @@ class FitModel:
             'w_reg_latent': 0.05,
             'initial_lr': 0.1,
             'lr_rampdown_length': 0.25,
-            'total_step': 100,
+            'total_step': 50,
             'print_freq': 5,
             'visual_freq': 10,
         }
@@ -59,7 +59,7 @@ class FitModel:
             'initial_lr': 0.01,
             'tex_lr_scale': 1.0 if loose_tex else 0.05,
             'lr_rampdown_length': 0.4,
-            'total_step': 200,
+            'total_step': 100,
             'print_freq': 10,
             'visual_freq': 20,
         }
