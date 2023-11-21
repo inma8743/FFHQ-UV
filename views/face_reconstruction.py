@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify
 from services.process_data import process_data
-# from services.rgb_fitting import perform_rgb_fitting
 
 face_reconstruction_blueprint = Blueprint('face_reconstruction', __name__)
 

@@ -3,7 +3,6 @@ import time
 import torch
 
 from RGB_Fitting.dataset.fit_dataset import FitDataset
-# from utils.data_utils import tensor2np, img3channel, draw_mask, draw_landmarks, save_img
 
 def process_data(input_dir, output_dir):
     checkpoints_dir = '../checkpoints'
