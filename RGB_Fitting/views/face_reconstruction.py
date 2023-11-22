@@ -1,5 +1,5 @@
-from flask import Blueprint, request, jsonify
-from services.process_data import process_data
+from flask import Blueprint, request
+from RGB_Fitting.services.process_data import process_data
 
 face_reconstruction_blueprint = Blueprint('face_reconstruction', __name__)
 

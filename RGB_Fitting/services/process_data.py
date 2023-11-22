@@ -5,13 +5,13 @@ import torch
 from RGB_Fitting.dataset.fit_dataset import FitDataset
 
 def process_data(input_dir, output_dir):
-    checkpoints_dir = '../checkpoints'
-    topo_assets_dir = '../topo_assets'
+    checkpoints_dir = '../../checkpoints'
+    topo_assets_dir = '../../topo_assets'
 
-    dataset_op = FitDataset(lm_detector_path='../checkpoints/lm_model/68lm_detector.pb',
-                            mtcnn_detector_path='../checkpoints/mtcnn_model/mtcnn_model.pb',
+    dataset_op = FitDataset(lm_detector_path='../../checkpoints/lm_model/68lm_detector.pb',
+                            mtcnn_detector_path='../../checkpoints/mtcnn_model/mtcnn_model.pb',
                             parsing_model_pth='../checkpoints/parsing_model/79999_iter.pth',
-                            parsing_resnet18_path='../checkpoints/resnet_model/resnet18-5c106cde.pth',
+                            parsing_resnet18_path='../../checkpoints/resnet_model/resnet18-5c106cde.pth',
                             lm68_3d_path='../topo_assets/similarity_Lm3D_all.mat',
                             batch_size=1,
                             device='cuda')
