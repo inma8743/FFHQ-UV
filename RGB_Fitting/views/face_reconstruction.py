@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from RGB_Fitting.services.process_data import process_data
+from ..services.process_data import process_data
 
 face_reconstruction_blueprint = Blueprint('face_reconstruction', __name__)
 
@@ -13,6 +13,6 @@ def reconstruct_face():
         return 'No selected file'
 
     # 특징점 추출
-    processing_data = process_data(file)
+    process_data(file)
 
     # 결과 반환
