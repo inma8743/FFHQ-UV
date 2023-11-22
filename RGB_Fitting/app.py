@@ -1,5 +1,5 @@
 from flask import Flask
-from RGB_Fitting.views.face_reconstruction import face_reconstruction_blueprint
+from views.face_reconstruction import face_reconstruction_blueprint
 
 app = Flask(__name__)
 
